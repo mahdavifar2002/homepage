@@ -1,292 +1,320 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head><script src="assets/js/color-modes.js"></script>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.122.0">
-    <title>Ali Mahdavifar</title>
+<head>
+  <script src="assets/js/color-modes.js"></script>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.122.0">
+  <title>Ali Mahdavifar</title>
 
-    
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-
-<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
 
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+  <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
       }
+    }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
 
-      .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
 
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
 
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
 
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
 
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
+    .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
 
-      .btn-bd-primary {
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
 
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
-      }
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
 
-      .bd-mode-toggle {
-        z-index: 1500;
-      }
+    .bd-mode-toggle .dropdown-menu .active .bi {
+      display: block !important;
+    }
 
-      .bd-mode-toggle .dropdown-menu .active .bi {
-        display: block !important;
-      }
+    a {
+      text-decoration: none;
+    }
+  </style>
 
-      a {
-        text-decoration: none;
-      }
-    </style>
 
-    
-    <!-- Custom styles for this template -->
-    <link href="assets/css/carousel.css" rel="stylesheet">
-  </head>
-  <body>
-    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-      <symbol id="check2" viewBox="0 0 16 16">
-        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-      </symbol>
-      <symbol id="circle-half" viewBox="0 0 16 16">
-        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
-      </symbol>
-      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
-        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
-        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
-      </symbol>
-      <symbol id="sun-fill" viewBox="0 0 16 16">
-        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-      </symbol>
-    </svg>
+  <!-- Custom styles for this template -->
+  <link href="assets/css/carousel.css" rel="stylesheet">
+</head>
 
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
-              id="bd-theme"
-              type="button"
-              aria-expanded="false"
-              data-bs-toggle="dropdown"
-              aria-label="Toggle theme (auto)">
-        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
-        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
-            Light
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
-            Dark
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
-            Auto
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-      </ul>
-    </div>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="check2" viewBox="0 0 16 16">
+      <path
+        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+      <path
+        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+      <path
+        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
+      <path
+        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+    </symbol>
+  </svg>
 
-    
-<header data-bs-theme="dark">
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"><strong>Ali Mahdavifar</strong></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#resume">Resume</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#projects">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#hobbies">Hobbies</a>
-          </li>
-        </ul>
-        <form class="d-flex" role="search" action="https://www.google.com/search">
-          <input name="sitesearch" type="hidden" value="ali.mahdavifar.me">
-          <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav>
-</header>
-
-<main>
-
-  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+  <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+    <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+      aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+      <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+        <use href="#circle-half"></use>
+      </svg>
+      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+          aria-pressed="false">
+          <svg class="bi me-2 opacity-50" width="1em" height="1em">
+            <use href="#sun-fill"></use>
+          </svg>
+          Light
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+          aria-pressed="false">
+          <svg class="bi me-2 opacity-50" width="1em" height="1em">
+            <use href="#moon-stars-fill"></use>
+          </svg>
+          Dark
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
+          aria-pressed="true">
+          <svg class="bi me-2 opacity-50" width="1em" height="1em">
+            <use href="#circle-half"></use>
+          </svg>
+          Auto
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+    </ul>
   </div>
 
-  <!-- Marketing messaging and featurettes
+
+  <header data-bs-theme="dark">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><strong>Ali Mahdavifar</strong></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#resume">Resume</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#hobbies">Hobbies</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search" action="https://www.google.com/search">
+            <input name="sitesearch" type="hidden" value="ali.mahdavifar.me">
+            <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Marketing messaging and featurettes
   ================================================== -->
-  <!-- Wrap the rest of the page in another container to center all the content. -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
 
-  <div class="container marketing">
+    <div class="container marketing">
 
-    <!-- Three columns of text below the carousel -->
-    <div class="row">
-      <div class="col-lg-4">
-        <img class="bd-placeholder-img rounded" width="300" height="300" role="img" src="assets/img/ali.jpg" arial-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-8">
-        <h2 class="fw-normal">About Me</h2>
-        <p>I'm Ali Mahdavifar, a <a href="https://ce.sharif.edu" target="_blank">computer engineering</a> graduate from <a href="https://sharif.edu">Sharif University of Technology</a> (Class of 2024).
-          I have experience in algorithms and complexity through my internship at <a href="https://www.mpi-inf.mpg.de">MPI-INF</a> and my bachelor's research project on the complexity of fine-tuning neural networks.
-          Additionally, I worked as a Python developer during my internship at <a href="https://www.instagram.com/ayandenegar.studio">Ayandenegar Animation Studio</a>.</p>
-        <!-- <div class="alert alert-primary" role="alert">
+      <!-- Three columns of text below the carousel -->
+      <div class="row pt-5">
+        <div class="col-lg-4">
+          <img class="bd-placeholder-img rounded" width="300" height="300" role="img" src="assets/img/ali.jpg"
+            arial-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-8">
+          <h1 class="fw-normal">About Me</h1>
+          <p>I'm Ali Mahdavifar, a <a href="https://ce.sharif.edu" target="_blank">computer engineering</a> graduate
+            from <a href="https://sharif.edu">Sharif University of Technology</a> (Class of 2024).
+            I have experience in algorithms and complexity through my internship at <a
+              href="https://www.mpi-inf.mpg.de">MPI-INF</a> and my bachelor's research project on the complexity of
+            fine-tuning neural networks.
+            Additionally, I worked as a Python developer during my internship at <a
+              href="https://www.instagram.com/ayandenegar.studio">Ayandenegar Animation Studio</a>.</p>
+          <!-- <div class="alert alert-primary" role="alert">
           🎉 From August, I'll start my master's of <a href="https://cosi-master.eu">computational colour and spectral imaging</a> at <a href="https://www.univ-st-etienne.fr">Jean Monnet University</a>.
         </div> -->
-      </div><!-- /.col-lg-8 -->
-    </div><!-- /.row -->
-    
-    <!-- Section: Timeline -->
-    <link href="assets/css/timeline.css" rel="stylesheet">
-    <hr class="featurette-divider" id="resume">
+        </div><!-- /.col-lg-8 -->
+      </div><!-- /.row -->
 
-    <div class="row">
-      <h2 class="text-center">My resume at a glance</h2>
-      <section class="py-5">
-        <ul class="timeline-with-icons">
-          <li class="timeline-item mb-5">
-            <span class="timeline-icon">
-              <i class="fas fa-award text-primary fa-sm fa-fw"></i>
-            </span>
+      <!-- Section: Timeline -->
+      <link href="assets/css/timeline.css" rel="stylesheet">
+      <hr class="featurette-divider" id="resume">
 
-            <h5 class="fw-bold">Youngest [honorary] member of University of Kashan</h5>
-            <p class="text-muted mb-2 fw-bold">2014</p>
-            <p class="text-muted">
-              I've been honored to participare in several courses of the faculty of mathematics at University of Kashan. Here is <a href="https://kashanu.ac.ir/fa/news/2934">a link to the university bulletin</a>.
-            </p>
-          </li>
+      <div class="row">
+        <h1 class="text-center fw-normal">My resume at a glance</h1>
+        <section class="py-5">
+          <ul class="timeline-with-icons">
+            <li class="timeline-item mb-5">
+              <span class="timeline-icon">
+                <i class="fas fa-award text-primary fa-sm fa-fw"></i>
+              </span>
 
-          <li class="timeline-item mb-5">
+              <h5 class="fw-bold">Youngest [honorary] member of University of Kashan</h5>
+              <p class="text-muted mb-2 fw-bold">2014</p>
+              <p class="text-muted">
+                I've been honored to participare in several courses of the faculty of mathematics at University of
+                Kashan. Here is <a href="https://kashanu.ac.ir/fa/news/2934">a link to the university bulletin</a>.
+              </p>
+            </li>
 
-            <span class="timeline-icon">
-              <i class="fas fa-medal text-primary fa-sm fa-fw"></i>
-            </span>
-            <h5 class="fw-bold">Bronze medal in Iran national olympiad in informatics</h5>
-            <p class="text-muted mb-2 fw-bold">2018</p>
-            <p class="text-muted">
-              I practiced competitive programming during my high scool. Look at <a href="https://codeforces.com/profile/mahdavifar">my Codeforces profile</a>!
-            </p>
-          </li>
+            <li class="timeline-item mb-5">
 
-          <li class="timeline-item mb-5">
+              <span class="timeline-icon">
+                <i class="fas fa-medal text-primary fa-sm fa-fw"></i>
+              </span>
+              <h5 class="fw-bold">Bronze medal in Iran national olympiad in informatics</h5>
+              <p class="text-muted mb-2 fw-bold">2018</p>
+              <p class="text-muted">
+                I practiced competitive programming during my high scool. Look at <a
+                  href="https://codeforces.com/profile/mahdavifar">my Codeforces profile</a>!
+              </p>
+            </li>
 
-            <span class="timeline-icon">
-              <i class="fas fa-building-columns text-primary fa-sm fa-fw"></i>
-            </span>
-            <h5 class="fw-bold">B.Sc. at Sharif University of Technology</h5>
-            <p class="text-muted mb-2 fw-bold">2019 - 2024</p>
-            <p class="text-muted">
-              I majored computer engineering. My thesis topic was: <i>“Computational Complexity of Fine-Tuning Thresholds in Neural Networks”</i>.
-            </p>
-          </li>
+            <li class="timeline-item mb-5">
 
-          <li class="timeline-item mb-5">
+              <span class="timeline-icon">
+                <i class="fas fa-building-columns text-primary fa-sm fa-fw"></i>
+              </span>
+              <h5 class="fw-bold">B.Sc. at Sharif University of Technology</h5>
+              <p class="text-muted mb-2 fw-bold">2019 - 2024</p>
+              <p class="text-muted">
+                I majored computer engineering. My thesis topic was: <i>“Computational Complexity of Fine-Tuning
+                  Thresholds in Neural Networks”</i>.
+              </p>
+            </li>
 
-            <span class="timeline-icon">
-              <i class="fas fa-book fa-sm fa-fw"></i>
-            </span>
-            <h5 class="fw-bold">Reseach internship at Max Planck Institute for Informatics</h5>
-            <p class="text-muted mb-2 fw-bold">2022</p>
-            <p class="text-muted">
-              Under supervision of <a href="https://people.mpi-inf.mpg.de/~karrenba">Prof. Karrenbauer</a>, I conducted a research project in department of algorithms and complexity.
-            </p>
-          </li>
+            <li class="timeline-item mb-5">
 
-          <li class="timeline-item mb-5">
+              <span class="timeline-icon">
+                <i class="fas fa-book fa-sm fa-fw"></i>
+              </span>
+              <h5 class="fw-bold">Reseach internship at Max Planck Institute for Informatics</h5>
+              <p class="text-muted mb-2 fw-bold">2022</p>
+              <p class="text-muted">
+                Under supervision of <a href="https://people.mpi-inf.mpg.de/~karrenba">Prof. Karrenbauer</a>, I
+                conducted a research project in department of algorithms and complexity.
+              </p>
+            </li>
 
-            <span class="timeline-icon">
-              <i class="fas fa-code fa-sm fa-fw"></i>
-            </span>
-            <h5 class="fw-bold">Industrial internship at Ayandenegar Animation Studio</h5>
-            <p class="text-muted mb-2 fw-bold">2023</p>
-            <p class="text-muted">
-              I worked as a Python developer, to design and implement an internal messenger and file sharing software for the company.
-            </p>
-          </li>
+            <li class="timeline-item mb-5">
 
-          <!-- <li class="timeline-item mb-5">
+              <span class="timeline-icon">
+                <i class="fas fa-code fa-sm fa-fw"></i>
+              </span>
+              <h5 class="fw-bold">Industrial internship at Ayandenegar Animation Studio</h5>
+              <p class="text-muted mb-2 fw-bold">2023</p>
+              <p class="text-muted">
+                I worked as a Python developer, to design and implement an internal messenger and file sharing software
+                for the company.
+              </p>
+            </li>
+
+            <!-- <li class="timeline-item mb-5">
 
             <span class="timeline-icon">
               <i class="fas fa-building-columns fa-sm fa-fw"></i>
@@ -297,67 +325,187 @@
               I will study in computational colour and spectral imaging.
             </p>
           </li> -->
-        </ul>
-      </section>
-    </div>
-
-    <!-- START THE FEATURETTES -->
-
-    <hr class="featurette-divider" id="hobbies">
-
-    <h2 class="text-center">My hobbies</h2>
-    <br/><br/>
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">“Life is like biking. <span class="text-body-secondary">To keep your balance, you must keep moving.”</span></h2>
-        <p class="lead">Well said, Einstein! I'm not a professional, but I keep riding my bicycle and exploring the new neighborhoods in the city.
-          Feel free to follow <a href="https://www.relive.cc/profile/ali_mahdavifar">my activities on Relive</a>!</p>
+          </ul>
+        </section>
       </div>
-      <div class="col-md-5">
-        <img class="img-fluid rounded" src="assets/img/bike.jpg" width="500" height="100%"/>
-        <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg> -->
+
+      <!-- Section: Projects -->
+      <hr class="featurette-divider" id="projects">
+
+      <div class="row">
+        <h1 class="text-center fw-normal">Selected Projects</h1>
+        <div class="album py-5">
+          <div class="container">
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+              <div class="col">
+                <div class="card shadow-sm h-100">
+                  <img class="img-fluid" src="assets/img/projects/pyside.png" width="100%" height="225"/>
+                  <div class="card-body d-flex flex-column">
+                    <h3><a href="https://github.com/mahdavifar2002/ProjectManager">Internal Messenger</a></h3>
+                    <p class="card-text">I designed and implemented a new dedicated internal messenger for Ayandenegar Animation Studio
+                      during an internship. I created the UI using PySide and took advantage of MySQL plus SQLAlchemy ORM for the
+                      database.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary" style="pointer-events: none;">Python</button>
+                      </div>
+                      <small class="text-body-secondary">2023</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card shadow-sm h-100">
+                  <img class="img-fluid" src="assets/img/projects/signal.png" width="100%" height="225"/>
+                  <div class="card-body d-flex flex-column">
+                    <h3><a href="https://github.com/AlipourIm/DNS-Project-13">Security-Focused Messaging</a></h3>
+                    <p class="card-text">We designed and implemented a local messaging application in which the used protocol was immune
+                      to many of the attacks and vulnerabilities we learned in the Data & Network Security course.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary" style="pointer-events: none;">Python</button>
+                      </div>
+                      <small class="text-body-secondary">2023</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card shadow-sm h-100">
+                  <img class="img-fluid" src="assets/img/projects/occlusion.png" width="100%" height="225"/>
+                  <div class="card-body d-flex flex-column">
+                    <h3><a href="https://github.com/mahdavifar2002/cv-project/">AR Occlusion Handling</a></h3>
+                    <p class="card-text">In this project, we aimed to scale and combine AI-generated depth maps using matching keypoints
+                      and hence handled the occlusion problem in the WebXR platform.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary" style="pointer-events: none;">Javascript</button>
+                      </div>
+                      <small class="text-body-secondary">2023</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card shadow-sm h-100">
+                  <img class="img-fluid" src="assets/img/projects/rayTracer.png" width="100%" height="225"/>
+                  <div class="card-body d-flex flex-column">
+                    <h4><a href="https://github.com/mahdavifar2002/ray-tracing-in-one-weekend">Ray Tracer</a></h4>
+                    <p class="card-text">Following Peter Shirley's
+                      <a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html">Ray Tracing in One Weekend</a> book, I
+                      implemented my version of a simple ray tracer. In this project I learned about basics of ray tracing and
+                      antialiasing, implementation of reflections for several materials, and depth of field.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary" style="pointer-events: none;">C++</button>
+                      </div>
+                      <small class="text-body-secondary">2022</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card shadow-sm h-100">
+                  <img class="img-fluid" src="assets/img/projects/cMinus.png" width="100%" height="225"/>
+                  <div class="card-body d-flex flex-column">
+                    <h3><a href="https://github.com/AlipourIm/Compiler_Design_And_Implementation_Project">C-minus Compiler</a></h3>
+                    <p class="card-text">In this project, we implemented a simple compiler for a simplified version of the C language,
+                      called C-minus. I learned to work with DFAs, the LL parsing method, and code-generation techniques.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary" style="pointer-events: none;">Python</button>
+                      </div>
+                      <small class="text-body-secondary">2022</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card shadow-sm h-100">
+                  <img class="img-fluid" src="assets/img/projects/chessFX.png" width="100%" height="225"/>
+                  <div class="card-body d-flex flex-column">
+                    <h4><a href="https://github.com/mahdavifar2002/ChessFX">ChessFX</a></h4>
+                    <p class="card-text">Based on MVC architecture, I implemented a graphical chess game in Java, using JavaFX as the
+                      graphical interface.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary" style="pointer-events: none;">Java</button>
+                      </div>
+                      <small class="text-body-secondary">2020</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <hr class="featurette-divider">
+      <!-- Section: Hobbies -->
+      <hr class="featurette-divider" id="hobbies">
 
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading fw-normal lh-1">Calligraphy is my art. <span class="text-body-secondary">It's the art of excellence.</span></h2>
-        <p class="lead">I practice Persian calligraphy, both with pencil and with reed pen. It's a relaxing and satisfying activity for me.</p>
+      <div class="row">
+        <h1 class="text-center fw-normal pb-5">My hobbies</h1>
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1">“Life is like biking. <span class="text-body-secondary">To
+                keep your balance, you must keep moving.”</span></h2>
+            <p class="lead">Well said, Einstein! I'm not a professional, but I keep riding my bicycle and exploring
+              the new neighborhoods in the city.
+              Feel free to follow <a href="https://www.relive.cc/profile/ali_mahdavifar">my activities on
+                Relive</a>!</p>
+          </div>
+          <div class="col-md-5">
+            <img class="img-fluid rounded" src="assets/img/hobbies/bike.jpg" width="500" height="100%" />
+            <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg> -->
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading fw-normal lh-1">Calligraphy is my art. <span class="text-body-secondary">It's
+                the art of excellence.</span></h2>
+            <p class="lead">I practice Persian calligraphy, both with pencil and with reed pen. It's a relaxing and
+              satisfying activity for me.</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="img-fluid rounded" src="assets/img/hobbies/calligraphy.png" width="500" height="100%" />
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-8">
+            <h2 class="featurette-heading fw-normal lh-1">Life is an unknown game, <span class="text-body-secondary">and
+                I love playing games.</span></h2>
+            <p class="lead">Wherever I go, I bring my board games with me. It's not just about having fun. It's a
+              shortcut for socializing and knowing each other better.</p>
+          </div>
+          <div class="col-md-4">
+            <img class="img-fluid rounded" src="assets/img/hobbies/boardgame.png" width="500" height="100%" />
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
       </div>
-      <div class="col-md-5 order-md-1">
-        <img class="img-fluid rounded" src="assets/img/calligraphy.png" width="500" height="100%"/>
-      </div>
-    </div>
 
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-8">
-        <h2 class="featurette-heading fw-normal lh-1">Life is an unknown game, <span class="text-body-secondary">and I love playing games.</span></h2>
-        <p class="lead">Wherever I go, I bring my board games with me. It's not just about having fun. It's a shortcut for socializing and knowing each other better.</p>
-      </div>
-      <div class="col-md-4">
-        <img class="img-fluid rounded" src="assets/img/boardgame.png" width="500" height="100%"/>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <!-- /END THE FEATURETTES -->
-
-  </div><!-- /.container -->
+    </div><!-- /.container -->
 
 
-  <!-- FOOTER -->
-  <footer class="container">
-    <p class="float-end"><a href="#">Back to top</a></p>
-    <p>&copy; 2025 Ali Mahdavifar &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-  </footer>
-</main>
-<script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FOOTER -->
+    <footer class="container">
+      <p class="float-end"><a href="#">Back to top</a></p>
+      <p>&copy; 2025 Ali Mahdavifar &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+  </main>
+  <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
 
-    </body>
+</body>
+
 </html>
